@@ -1,0 +1,7 @@
+[
+    ".env.ncms.regular",
+    ".env",
+    ".env.ncms",
+    ".env.common",
+    "compare_folder.py"
+]
