@@ -5,7 +5,7 @@ standardfile = "standardfile.json"
 folderpath1 = "."
 folderpath2 = "envfiles"
 def load_contents_of_standardfile(standardfilename):
-    fileObject = open(standard_file, "r")
+    fileObject = open(standardfilename, "r")
     jsoncontent = fileObject.read()
     standardfilelist = json.loads(jsoncontent)
     fileObject.close()
