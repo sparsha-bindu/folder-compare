@@ -29,14 +29,25 @@ def compared_n_additionalfiles(allfiles, standardfilelist):
     return compared_files, additional_files
 
 
-def compare_folder_contents(directory_path, standard_file):
-    standardfilelist = load_contents_of_standardfile(standard_file)
+def allfileslist(directory_path):
     allfiles = []
     for root, dirnames, filenames in os.walk(directory_path):
         for filename in filenames:
             fullpath = os.path.join(root, filename)
             _, subpath = fullpath.split("/", 1)
             allfiles.append(subpath)
+    return allfiles
+
+
+def compare_folder_contents(directory_path, standard_file):
+    standardfilelist = load_contents_of_standardfile(standard_file)
+    allfiles=allfileslist(directory_path)
+#     allfiles = []
+#     for root, dirnames, filenames in os.walk(directory_path):
+#         for filename in filenames:
+#             fullpath = os.path.join(root, filename)
+#             _, subpath = fullpath.split("/", 1)
+#             allfiles.append(subpath)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
     return missing_files, additional_files
