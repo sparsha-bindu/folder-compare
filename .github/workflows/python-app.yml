@@ -37,7 +37,7 @@ jobs:
     - name: Test with pytest
       run: | 
           cd golden-compare
-          coverage run testfolders.py . standardfile.json
+          coverage run testfolders.py 
           coverage html
           coverage report
     
