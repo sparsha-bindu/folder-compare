@@ -33,7 +33,7 @@ def compared_n_additionalfiles(filenames, standardfilelist):
 
 def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
-    for root, dirnames, filenames in os.walk(path):
+    for root, dirnames, filenames in os.walk(directory_path):
         compared_files, additional_files = compared_n_additionalfiles(filenames, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
     return missing_files, additional_files
