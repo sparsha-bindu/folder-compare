@@ -20,20 +20,20 @@ def missingfileslist(filelist, givenfiles):
     return missing_files
 
 
-def compared_n_additionalfiles(path, standardfilelist):
+def compared_n_additionalfiles(filenames, standardfilelist):
     compared_files = []
     additional_files = []
-    for root, dirnames, filenames in os.walk(path):
-        for filename in filenames:
-            if filename in standardfilelist:
+    for filename in filenames:
+        if filename in standardfilelist:
                 compared_files.append(filename)
-            else:
-                additional_files.append(filename)
+        else:
+                additional_files.append(filename)     
     return compared_files, additional_files
 
 
 def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
-    compared_files, additional_files = compared_n_additionalfiles(directory_path, standardfilelist)
+    for root, dirnames, filenames in os.walk(path):
+        compared_files, additional_files = compared_n_additionalfiles(filenames, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
     return missing_files, additional_files
