@@ -1,7 +1,6 @@
 [
-    ".env.ncms.regular",
     ".env",
     ".env.ncms",
     ".env.common",
-    "compare_folder.py"
+    "subfolder/a.txt"
 ]
