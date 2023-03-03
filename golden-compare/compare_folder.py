@@ -27,7 +27,7 @@ def compared_n_additionalfiles(filenames, standardfilelist):
         if filename in standardfilelist:
             compared_files.append(filename)
         else:
-            additional_files.append(filename)          
+            additional_files.append(filename)
     return compared_files, additional_files
 
 
