@@ -2,8 +2,8 @@ import os
 import json
 
 standardfile = "standardfile.json"
-# folderpath1 = "."
-folderpath = "envfiles"
+folderpath = "."
+# folderpath = "envfiles"
 
 
 def load_contents_of_standardfile(standardfilename):
