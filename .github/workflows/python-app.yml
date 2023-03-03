@@ -35,6 +35,15 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      run: |
-        cd golden-compare
-        pytest testfolders.py
+      run: | 
+          cd golden-compare
+          coverage run testfolders.py . standardfile.json
+          coverage html
+          coverage report
+    
+    - name: Upload coverage
+      uses: actions/upload-artifact@v2
+      with:
+          name: coverage
+          path: ./htmlcov
+          retention-days: 21
