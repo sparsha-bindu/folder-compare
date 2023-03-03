@@ -16,7 +16,7 @@ def missingfileslist(filelist,givenfiles):
     [missing_files.append(file) for file in filelist if file not in givenfiles ]
     return missing_files
 
-def compare_folder_contents(directory_path, standard_file)
+def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
     compared_files = []
     additional_files = []
