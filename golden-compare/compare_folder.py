@@ -25,9 +25,9 @@ def compared_n_additionalfiles(filenames, standardfilelist):
     additional_files = []
     for filename in filenames:
         if filename in standardfilelist:
-                compared_files.append(filename)
+            compared_files.append(filename)
         else:
-                additional_files.append(filename)     
+            additional_files.append(filename)           
     return compared_files, additional_files
 
 
