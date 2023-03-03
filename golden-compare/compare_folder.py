@@ -27,13 +27,13 @@ def compared_n_additionalfiles(filenames, standardfilelist):
         if filename in standardfilelist:
             compared_files.append(filename)
         else:
-            additional_files.append(filename)           
+            additional_files.append(filename)          
     return compared_files, additional_files
 
 
 def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
-    allfiles=[]
+    allfiles = []
     for root, dirnames, filenames in os.walk(directory_path):
         allfiles.append(filenames)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
