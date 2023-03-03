@@ -34,17 +34,12 @@ def compare_folder_contents(directory_path, standard_file):
     allfiles = []
     for root, dirnames, filenames in os.walk(directory_path):
         for filename in filenames:
-            fullpath = os.path.join(root,filename)
-            _, subpath = fullpath.split("/",1)
+            fullpath = os.path.join(root, filename)
+            _, subpath = fullpath.split("/", 1)
             allfiles.append(subpath)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
-    print(compared_files)
-    print(additional_files)
     missing_files = missingfileslist(standardfilelist, compared_files)
-    print(missing_files)
     return missing_files, additional_files
-
-compare_folder_contents(folderpath,standardfile)
 # import os
 # import json
 
