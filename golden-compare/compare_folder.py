@@ -20,7 +20,7 @@ def missingfileslist(filelist, givenfiles):
     return missing_files
 
 
-def compared_and_additionalfiles(path):
+def compared_and_additionalfiles(path, standardfilelist):
     compared_files = []
     additional_files = []
     for root, dirnames, filenames in os.walk(path):
@@ -34,6 +34,6 @@ def compared_and_additionalfiles(path):
 
 def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
-    compared_files, additional_files = compared_and_additionalfiles(directory_path)
+    compared_files, additional_files = compared_and_additionalfiles(directory_path, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
     return missing_files, additional_files
