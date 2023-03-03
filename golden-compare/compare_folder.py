@@ -26,7 +26,7 @@ def compare_folder_contents(directory_path, standard_file):
                 compared_files.append(filename)
             else:
                 additional_files.append(filename)
-     missing_files=missingfileslist(standardfilelist,compared_files)
-     return missing_files, additional_files
+    missing_files=missingfileslist(standardfilelist,compared_files)
+    return missing_files, additional_files
     
 
