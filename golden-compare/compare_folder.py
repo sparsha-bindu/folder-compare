@@ -14,16 +14,16 @@ def load_contents_of_standardfile(standardfilename):
     return standardfilelist
 
 
-def missingfileslist(filelist, givenfiles):
+def missingfileslist(standardfilelist, compared_files):
     missing_files = []
-    [missing_files.append(file) for file in filelist if file not in givenfiles]
+    [missing_files.append(file) for file in standardfilelist if file not in compared_files]
     return missing_files
 
 
-def compared_n_additionalfiles(filenames, standardfilelist):
+def compared_n_additionalfiles(allfiles standardfilelist):
     compared_files = []
     additional_files = []
-    for filename in filenames:
+    for filename in allfiles:
         if filename in standardfilelist:
             compared_files.append(filename)
         else:
@@ -35,7 +35,8 @@ def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
     allfiles = []
     for root, dirnames, filenames in os.walk(directory_path):
-        allfiles.append(filenames)
+        for filename in filenames:
+            allfiles.append(filename)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
     return missing_files, additional_files
