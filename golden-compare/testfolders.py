@@ -1,4 +1,4 @@
-from compare_folder import compare_folder_contents, folderpath1, standardfile
+from compare_folder import compare_folder_contents, folderpath1,folderpath2, standardfile
 import unittest
 
 
