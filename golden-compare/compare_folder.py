@@ -20,7 +20,7 @@ def missingfileslist(standardfilelist, compared_files):
     return missing_files
 
 
-def compared_n_additionalfiles(allfiles standardfilelist):
+def compared_n_additionalfiles(allfiles, standardfilelist):
     compared_files = []
     additional_files = []
     for filename in allfiles:
