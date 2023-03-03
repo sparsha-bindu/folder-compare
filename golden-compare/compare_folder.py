@@ -1,15 +1,15 @@
 import os
 import json
 
-standardfile= "standardfile.json"
-folderpath1= "."
-folderpath2= "envfiles"
+standardfile = "standardfile.json"
+folderpath1 = "."
+folderpath2 = "envfiles"
 
 
 def compare_folder_contents(directory_path, standard_file):
-    fileObject= open(standard_file,"r")
-    jsoncontent= fileObject.read()
-    standardfilelist= json.loads(jsoncontent)
+    fileObject = open(standard_file,"r")
+    jsoncontent = fileObject.read()
+    standardfilelist = json.loads(jsoncontent)
     fileObject.close()
     compared_files= []
     additional_files= []
