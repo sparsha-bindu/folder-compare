@@ -29,11 +29,11 @@ def compared_and_additionalfiles(path):
                 compared_files.append(filename)
             else:
                 additional_files.append(filename)
-    return compared_files,additional_files
+    return compared_files, additional_files
 
 
 def compare_folder_contents(directory_path, standard_file):
     standardfilelist = load_contents_of_standardfile(standard_file)
-    compared_files,additional_files=compared_and_additionalfiles(directory_path)
+    compared_files, additional_files = compared_and_additionalfiles(directory_path)
     missing_files = missingfileslist(standardfilelist, compared_files)
     return missing_files, additional_files
