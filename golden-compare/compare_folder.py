@@ -34,7 +34,8 @@ def compare_folder_contents(directory_path, standard_file):
     allfiles = []
     for root, dirnames, filenames in os.walk(directory_path):
         for filename in filenames:
-            fullpath = os.path.join(root, filename)
+            fullpath = os.path.abspath(filename)
+#             fullpath = os.path.join(root, filename)
 #             _, subpath = fullpath.split("/", 1)
             allfiles.append(fullpath)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
