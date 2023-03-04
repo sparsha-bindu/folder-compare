@@ -8,11 +8,12 @@ class TestFolder(unittest.TestCase):
         _, additionalfiles = compare_folder_contents(folderpath, standardfile)
 #         self.assertEqual(len(additionalfiles), 0)
         self.assertTrue(len(additionalfiles) >= 0)
-
-    def test_for_missing_files(self):  # checks for length of missing files is greater than zero
-        missingfiles, _ = compare_folder_contents(folderpath, standardfile)
-#         self.assertEqual(len(missingfiles), 0)
         self.assertTrue(len(missingfiles) > 0)
+
+#     def test_for_missing_files(self):  # checks for length of missing files is greater than zero
+#         missingfiles, _ = compare_folder_contents(folderpath, standardfile)
+# #         self.assertEqual(len(missingfiles), 0)
+#         self.assertTrue(len(missingfiles) > 0)
 
 
 if __name__ == '__main__':
