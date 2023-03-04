@@ -5,7 +5,7 @@ import unittest
 class TestFolder(unittest.TestCase):
     # checks for length of additional files is greater or equal to zero
     def test_for_additional_files(self):
-        _, additionalfiles = compare_folder_contents(folderpath, standardfile)
+        missingfiles, additionalfiles = compare_folder_contents(folderpath, standardfile)
 #         self.assertEqual(len(additionalfiles), 0)
         self.assertTrue(len(additionalfiles) >= 0)
         self.assertTrue(len(missingfiles) > 0)
