@@ -39,6 +39,7 @@ def compare_folder_contents(directory_path, standard_file):
             fullpath = os.path.join(root, filename)
             _, subpath = fullpath.split("/", 1)
             allfiles.append(fullpath)
+    print("all",allfiles)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
     print(missing_files)
