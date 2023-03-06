@@ -26,6 +26,8 @@ def compared_n_additionalfiles(allfiles, standardfilelist):
             compared_files.append(filename)
         else:
             additional_files.append(filename)
+    print("c",compared_files)
+    print("a",additional_files)
     return compared_files, additional_files
 
 
@@ -39,4 +41,5 @@ def compare_folder_contents(directory_path, standard_file):
             allfiles.append(fullpath)
     compared_files, additional_files = compared_n_additionalfiles(allfiles, standardfilelist)
     missing_files = missingfileslist(standardfilelist, compared_files)
+    print(missing_files)
     return missing_files, additional_files
